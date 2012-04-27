@@ -1,50 +1,48 @@
 package dk.itu.spct.locomotion.shared;
 
-import java.util.Date;
-
 public class DataPoint {
 
-  private Date _timestamp;
-  private double _x;
-  private double _y;
-  private double _z;
+  private long _timestamp;
+  private float _x;
+  private float _y;
+  private float _z;
 
-  public DataPoint(Date timestamp, double x, double y, double z) {
+  public DataPoint(long timestamp, float x, float y, float z) {
     _timestamp = timestamp;
     _x = x;
     _y = y;
     _z = z;
   }
 
-  public double getZ() {
+  public float getZ() {
     return _z;
   }
 
-  public void setZ(double z) {
+  public void setZ(float z) {
     _z = z;
   }
 
-  public double getY() {
+  public float getY() {
     return _y;
   }
 
-  public void setY(double y) {
+  public void setY(float y) {
     _y = y;
   }
 
-  public double getX() {
+  public float getX() {
     return _x;
   }
 
-  public void setX(double x) {
+  public void setX(float x) {
     _x = x;
   }
 
-  public Date getTimestamp() {
+  public long getTimestamp() {
     return _timestamp;
   }
 
-  public void setTimestamp(Date timestamp) {
+  public void setTimestamp(long timestamp) {
     _timestamp = timestamp;
   }
 
