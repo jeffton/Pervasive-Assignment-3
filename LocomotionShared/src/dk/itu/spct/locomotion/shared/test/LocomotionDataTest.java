@@ -1,7 +1,6 @@
 package dk.itu.spct.locomotion.shared.test;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
 
