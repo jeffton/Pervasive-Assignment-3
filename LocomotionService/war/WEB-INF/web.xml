@@ -5,12 +5,12 @@ xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
-		<servlet-name>Locomotion_at_itu</servlet-name>
-		<servlet-class>dk.itu.spct.locomotion.gae.Locomotion_at_ituServlet</servlet-class>
+		<servlet-name>LocomotionService</servlet-name>
+		<servlet-class>dk.itu.spct.locomotion.service.LocomotionServiceServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Locomotion_at_itu</servlet-name>
-		<url-pattern>/locomotion_at_itu</url-pattern>
+		<servlet-name>LocomotionService</servlet-name>
+		<url-pattern>/locomotionservice</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
