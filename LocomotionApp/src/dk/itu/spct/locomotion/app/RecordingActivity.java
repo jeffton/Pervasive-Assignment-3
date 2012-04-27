@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 import dk.itu.spct.locomotion.shared.LocomotionData;
 
-public class LocomotionAppActivity extends Activity implements
+public class RecordingActivity extends Activity implements
     AccelerometerRecorder.Listener {
 
   private Vibrator _vibrator;
@@ -42,7 +42,7 @@ public class LocomotionAppActivity extends Activity implements
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
-        Toast.makeText(LocomotionAppActivity.this, text, Toast.LENGTH_SHORT)
+        Toast.makeText(RecordingActivity.this, text, Toast.LENGTH_SHORT)
             .show();
       }
     });

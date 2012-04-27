@@ -12,7 +12,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name=".LocomotionAppActivity"
+            android:name=".RecordingActivity"
             android:configChanges="orientation|keyboard|keyboardHidden"
             android:label="@string/app_name" >
             <intent-filter>
