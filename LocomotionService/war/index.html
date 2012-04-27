@@ -1,14 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
-<!-- above set at the top of the file will set     -->
-<!-- the browser's rendering engine into           -->
-<!-- "Quirks Mode". Replacing this declaration     -->
-<!-- with a "Standards Mode" doctype is supported, -->
-<!-- but may lead to some differences in layout.   -->
-
+<!doctype html>
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link type="text/css" rel="stylesheet" href="style.css">
     <title>Locomotion at ITU Service</title>
   </head>
 
@@ -18,5 +13,15 @@
       See <a href="https://blog.itu.dk/SPCT-F2012/lab-classes/assignment-3/">Mandatory Assignment #3 - Sensing and identifying everyday body locomotion</a> 
       and <a href="https://github.com/jeffton/Pervasive-Assignment-3">GitHub</a>.
     </p>
+
+    <form action="/upload" method="post">
+      <fieldset>
+        <legend>Upload Test</legend>
+        <p><textarea name="data" id="data" required="required"></textarea></p>
+        <p><input type="submit" value="Submit"> <input type="reset" value="Reset"></p>
+      </fieldset>
+    </form>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   </body>
 </html>

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyService;
 
 import dk.itu.spct.locomotion.shared.LocomotionData;
@@ -33,7 +34,12 @@ public class UploadServlet extends HttpServlet {
 			return;
 		}
 		
+		// save uploaded data
+		LocomotionData data = LocomotionData.fromJson(json);
+		Objectify ofy = ObjectifyService.begin();
+		ofy.put(data);
 		
+		resp.setStatus(HttpServletResponse.SC_OK);
 	}
 	
 }

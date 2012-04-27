@@ -2,48 +2,48 @@ package dk.itu.spct.locomotion.shared;
 
 public class DataPoint {
 
-  private long _timestamp;
-  private float _x;
-  private float _y;
-  private float _z;
+  private long timestamp;
+  private float x;
+  private float y;
+  private float z;
 
   public DataPoint(long timestamp, float x, float y, float z) {
-    _timestamp = timestamp;
-    _x = x;
-    _y = y;
-    _z = z;
+    this.timestamp = timestamp;
+    this.x = x;
+    this.y = y;
+    this.z = z;
   }
 
   public float getZ() {
-    return _z;
+    return this.z;
   }
 
   public void setZ(float z) {
-    _z = z;
+    this.z = z;
   }
 
   public float getY() {
-    return _y;
+    return this.y;
   }
 
   public void setY(float y) {
-    _y = y;
+    this.y = y;
   }
 
   public float getX() {
-    return _x;
+    return this.x;
   }
 
   public void setX(float x) {
-    _x = x;
+    this.x = x;
   }
 
   public long getTimestamp() {
-    return _timestamp;
+    return this.timestamp;
   }
 
   public void setTimestamp(long timestamp) {
-    _timestamp = timestamp;
+    this.timestamp = timestamp;
   }
 
 }

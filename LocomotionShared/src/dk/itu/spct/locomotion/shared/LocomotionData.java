@@ -7,36 +7,36 @@ import com.google.gson.Gson;
 
 public class LocomotionData {
 
-  private Date _date;
-  private String _name;
-  private ArrayList<DataPoint> _dataPoints;
+  private Date date;
+  private String name;
+  private ArrayList<DataPoint> dataPoints;
 
   public LocomotionData() {
-    _dataPoints = new ArrayList<DataPoint>();
+    dataPoints = new ArrayList<DataPoint>();
   }
 
   public Date getDate() {
-    return _date;
+    return date;
   }
 
   public void setDate(Date date) {
-    _date = date;
+    this.date = date;
   }
 
   public String getName() {
-    return _name;
+    return name;
   }
 
   public void setName(String name) {
-    _name = name;
+	  this.name = name;
   }
 
   public ArrayList<DataPoint> getDataPoints() {
-    return _dataPoints;
+    return dataPoints;
   }
 
   public void addDataPoint(DataPoint point) {
-    _dataPoints.add(point);
+    dataPoints.add(point);
   }
 
   public static String toJson(LocomotionData data) {
