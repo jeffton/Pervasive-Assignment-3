@@ -13,7 +13,7 @@ import dk.itu.spct.locomotion.shared.LocomotionData;
 
 public class DataUploader {
 
-  private final static String URL = "http://anti.zno.dk/whatever";
+  private final static String URL = "http://locomotion-at-itu.appspot.com/put";
 
   public static void upload(LocomotionData data) {
     try {
