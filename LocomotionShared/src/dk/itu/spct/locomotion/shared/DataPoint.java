@@ -1,7 +1,5 @@
 package dk.itu.spct.locomotion.shared;
 
-import java.util.Date;
-
 public class DataPoint {
 
   private long _timestamp;
