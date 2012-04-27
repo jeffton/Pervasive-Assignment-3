@@ -16,7 +16,7 @@ public class LocomotionDataTest {
     LocomotionData data = new LocomotionData();
     data.setDate(new Date(80000));
     data.setName("some name");
-    data.addDataPoint(new DataPoint(new Date(80001), 1d, 2d, 3d));
+    data.addDataPoint(new DataPoint(new Date(80001), 1f, 2f, 3f));
     String json = LocomotionData.toJson(data);
     
     LocomotionData actual = LocomotionData.fromJson(json);
