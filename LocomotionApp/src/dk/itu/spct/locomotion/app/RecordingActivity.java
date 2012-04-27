@@ -1,5 +1,7 @@
 package dk.itu.spct.locomotion.app;
 
+import java.util.Date;
+
 import android.app.Activity;
 import android.hardware.SensorManager;
 import android.os.Bundle;
@@ -27,8 +29,9 @@ public class RecordingActivity extends Activity implements
 
   public void onRecordButtonClicked(View view) {
     int pause = 5;
+    int duration = 10;
     showToast("Will record in " + pause + " second(s).");
-    _recorder.startRecording(pause, 10);
+    _recorder.startRecording(pause, duration);
   }
 
   @Override
@@ -77,11 +80,13 @@ public class RecordingActivity extends Activity implements
         });
   }
 
-  protected void uploadRecording(String value, final LocomotionData data) {
+  protected void uploadRecording(final String name, final LocomotionData data) {
     showToast("Upload started");
     new Thread(new Runnable() {
       @Override
       public void run() {
+        data.setName(name);
+        data.setDate(new Date());
         DataUploader.upload(data);
         showToast("Upload done!");
       }
