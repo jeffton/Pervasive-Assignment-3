@@ -1,4 +1,5 @@
-package dk.itu.spcl.locomotion.app;
+package dk.itu.spct.locomotion.app;
+
 
 import android.app.Activity;
 import android.os.Bundle;
