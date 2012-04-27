@@ -6,7 +6,11 @@ public class DataPoint {
   private float x;
   private float y;
   private float z;
-
+  
+  public DataPoint() {
+	  
+  }
+  
   public DataPoint(long timestamp, float x, float y, float z) {
     this.timestamp = timestamp;
     this.x = x;

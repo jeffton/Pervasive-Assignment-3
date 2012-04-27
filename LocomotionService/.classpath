@@ -3,7 +3,8 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/LocomotionShared"/>
 	<classpathentry kind="lib" path="lib/objectify-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/eh/Documents/ITU/Courses/Pervasive Computing - E2012/Pervasive-Assignment-3/lib/dk.itu.spct.locomotion.shared.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.1.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>

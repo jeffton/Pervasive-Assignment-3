@@ -8,10 +8,21 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>UploadServlet</servlet-name>
 		<servlet-class>dk.itu.spct.locomotion.service.UploadServlet</servlet-class>
 	</servlet>
+	<servlet>
+    <servlet-name>GetDataServlet</servlet-name>
+    <servlet-class>dk.itu.spct.locomotion.service.GetDataServlet</servlet-class>
+  </servlet>
+	
 	<servlet-mapping>
 		<servlet-name>UploadServlet</servlet-name>
-		<url-pattern>/upload</url-pattern>
+		<url-pattern>/put</url-pattern>
 	</servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>GetDataServlet</servlet-name>
+    <url-pattern>/get</url-pattern>
+  </servlet-mapping>
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>

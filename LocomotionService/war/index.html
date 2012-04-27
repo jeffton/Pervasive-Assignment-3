@@ -13,8 +13,19 @@
       See <a href="https://blog.itu.dk/SPCT-F2012/lab-classes/assignment-3/">Mandatory Assignment #3 - Sensing and identifying everyday body locomotion</a> 
       and <a href="https://github.com/jeffton/Pervasive-Assignment-3">GitHub</a>.
     </p>
+    <h2>Download already uploaded data</h2>
+    <table id="list">
+      <thead>
+        <tr>
+          <th>Created</th>
+          <th>Size</th>
+          <th>Filename</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
-    <form action="/upload" method="post">
+    <form action="/put" method="post">
       <fieldset>
         <legend>Upload Test</legend>
         <p><textarea name="data" id="data" required="required"></textarea></p>
@@ -23,5 +34,21 @@
     </form>
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $.get("/get", function(res){
+          if($.isArray(res)) {
+            for(var i = 0, len = res.length; i < len; i += 1) {
+              $('#list > tbody').append('<tr>' + 
+                '<td>' + res[i].propertyMap.creation +
+                '</td><td>' + res[i].propertyMap.size +
+                '</td><td>' + '<a href="/get?id=' + res[i].key.name + '">' + 
+                 res[i].propertyMap.filename + '</a></td></tr>');
+            }
+          }
+        });
+      });
+      
+    </script>
   </body>
 </html>
