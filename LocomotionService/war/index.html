@@ -22,7 +22,7 @@
           <th>Filename</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody><tr><td colspan="3">Loading existing csv files</td></tr></tbody>
     </table>
 
     <form action="/put" method="post">
@@ -37,12 +37,14 @@
     <script>
       $(document).ready(function(){
         $.get("/get", function(res){
+          var tbody = $('#list > tbody');
+          tbody.empty();
           if($.isArray(res)) {
             for(var i = 0, len = res.length; i < len; i += 1) {
-              $('#list > tbody').append('<tr>' + 
+              tbody.append('<tr>' + 
                 '<td>' + res[i].propertyMap.creation +
                 '</td><td>' + res[i].propertyMap.size +
-                '</td><td>' + '<a href="/get?id=' + res[i].key.name + '">' + 
+                '</td><td>' + '<a href="/get/' + res[i].propertyMap.filename + '?id=' + res[i].key.name + '">' + 
                  res[i].propertyMap.filename + '</a></td></tr>');
             }
           }
