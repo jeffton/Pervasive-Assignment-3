@@ -39,7 +39,7 @@
         $.get("/get", function(res){
           var tbody = $('#list > tbody');
           tbody.empty();
-          if($.isArray(res)) {
+          if($.isArray(res) && res.length > 0) {
             for(var i = 0, len = res.length; i < len; i += 1) {
               tbody.append('<tr>' + 
                 '<td>' + res[i].propertyMap.creation +
@@ -47,6 +47,8 @@
                 '</td><td>' + '<a href="/get/' + res[i].propertyMap.filename + '?id=' + res[i].key.name + '">' + 
                  res[i].propertyMap.filename + '</a></td></tr>');
             }
+          } else {
+            tbody.append('<tr><td colspan="3">No CSV files found, refresh page to retry.</td></tr>');
           }
         });
       });
