@@ -18,9 +18,9 @@ import dk.itu.spct.locomotion.shared.LocomotionData;
 
 @SuppressWarnings("serial")
 public class UploadServlet extends LocomotionServlet {
-	private static char CSV_DELIMITER = ';';
+	private static char CSV_DELIMITER = ',';
 	private static SimpleDateFormat formatter = new SimpleDateFormat(
-			"d-M-y-H-m-s");
+			"d-M-y_H-m");
 
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)

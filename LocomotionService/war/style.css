@@ -535,10 +535,18 @@ input[type=text]{
   
 }
 
+frameset {
+  border: 1px solid rgba(177, 255, 177, 0.5);
+}
+
+legend, label {
+  color: #B1FAAF;
+}
+
 textarea {
   width: 500px;
   height: 200px;
-  border: 1px solid rgba(0, 255, 0, 0.5);
+  border: 1px solid rgba(177, 255, 177, 0.5);
   background: #000;
   color: green;
   padding: 10px;
@@ -555,4 +563,12 @@ table th {
 
 table td {
   padding: 2px 5px;
+}
+
+a, a:visited {
+  color: #D1E0FF; 
+}
+
+a:hover {
+  color: #D1FFE5;
 }
