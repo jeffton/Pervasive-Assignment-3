@@ -5,6 +5,7 @@ import java.util.Date;
 import android.app.Activity;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.os.Vibrator;
 import android.view.View;
 import android.widget.Toast;
@@ -14,8 +15,9 @@ public class RecordingActivity extends Activity implements
     AccelerometerRecorder.Listener {
 
   private Vibrator _vibrator;
+  private PowerManager.WakeLock _wakeLock;
   private AccelerometerRecorder _recorder;
-  private final static int VIBRATION_TIME = 300;
+  private final static int VIBRATION_TIME = 600;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -24,12 +26,16 @@ public class RecordingActivity extends Activity implements
     _vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
     SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
     _recorder = new AccelerometerRecorder(sensorManager, this);
+    PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
+    _wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Locomotion");
+    
     setContentView(R.layout.main);
   }
 
   public void onRecordButtonClicked(View view) {
     int pause = 5;
     int duration = 10;
+    _wakeLock.acquire();
     showToast("Will record in " + pause + " second(s).");
     _recorder.startRecording(pause, duration);
   }
@@ -61,6 +67,7 @@ public class RecordingActivity extends Activity implements
   @Override
   public void recordingDone(final LocomotionData data) {
     _vibrator.vibrate(VIBRATION_TIME);
+    _wakeLock.release();
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
