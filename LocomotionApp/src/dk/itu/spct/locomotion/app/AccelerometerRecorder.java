@@ -8,7 +8,7 @@ import dk.itu.spct.locomotion.shared.DataPoint;
 import dk.itu.spct.locomotion.shared.LocomotionData;
 
 public class AccelerometerRecorder {
-
+  
   public interface Listener {
     public void recordingStarting();
 
@@ -55,7 +55,8 @@ public class AccelerometerRecorder {
   private class RecordingSensorListener implements SensorEventListener {
 
     private LocomotionData _locomotionData;
-
+    private long _firstTimestamp = -1;
+    
     public RecordingSensorListener() {
       _locomotionData = new LocomotionData();
     }
@@ -66,9 +67,16 @@ public class AccelerometerRecorder {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-      DataPoint point = new DataPoint(event.timestamp, event.values[0],
+      DataPoint point = new DataPoint(getRelativeTimestamp(event.timestamp), event.values[0],
           event.values[1], event.values[2]);
       _locomotionData.addDataPoint(point);
+    }
+    
+    private long getRelativeTimestamp(long timestamp) {
+      if (_firstTimestamp == -1)
+        _firstTimestamp = timestamp;
+      
+      return timestamp - _firstTimestamp;
     }
 
     public LocomotionData getLocomotionData() {
