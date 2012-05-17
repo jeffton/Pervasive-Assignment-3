@@ -44,7 +44,7 @@
               tbody.append('<tr>' + 
                 '<td>' + res[i].propertyMap.creation +
                 '</td><td>' + res[i].propertyMap.size +
-                '</td><td>' + '<a href="/get/' + res[i].propertyMap.filename + '?id=' + res[i].key.name + '">' + 
+                '</td><td>' + '<a href="/get/' + encodeURIComponent(res[i].propertyMap.filename) + '?id=' + res[i].key.name + '">' + 
                  res[i].propertyMap.filename + '</a></td></tr>');
             }
           } else {
